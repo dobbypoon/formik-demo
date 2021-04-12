@@ -55,7 +55,7 @@ class RegisterForm extends Component {
 
                             {/* <label htmlFor="fullName">Name</label>
                             <Field type="name" name="fullName" />
-                            <ErrorMessage name="fullName" component="div" /> */}
+                            <ErrorMessage name="fullName" component="div" className="error" /> */}
 
                             <MyTextInput
                                 label="Name"
@@ -79,13 +79,13 @@ class RegisterForm extends Component {
                         <div>
                             <label htmlFor="email">Email Address</label>
                             <Field type="email" name="email" />
-                            <ErrorMessage name="email" component="div" />
+                            <ErrorMessage name="email" component="div" className="error" />
                         </div>
 
                         <div>
                             <label htmlFor="tel">Tel</label>
                             <Field type="tel" name="tel" />
-                            <ErrorMessage name="tel" component="div" />
+                            <ErrorMessage name="tel" component="div" className="error" />
                         </div>
                     </div>
                     <div className="row">
@@ -95,6 +95,7 @@ class RegisterForm extends Component {
                         </div>
 
                         <div>
+                            <label htmlFor="title">Title</label>
                             <Field name="title" as="select">
                                 <option value="">Please select</option>
                                 <option value="Mr.">Mr.</option>
@@ -124,18 +125,18 @@ class RegisterForm extends Component {
                         <div>
                             <label htmlFor="password">Password</label>
                             <Field type="password" name="password" />
-                            <ErrorMessage name="password" component="div" />
+                            <ErrorMessage name="password" component="div" className="error" />
                         </div>
 
                         <div>
                             <label htmlFor="confirmPassword">Confirm Password</label>
                             <Field type="password" name="confirmPassword" />
-                            <ErrorMessage name="confirmPassword" component="div" />
+                            <ErrorMessage name="confirmPassword" component="div" className="error" />
                         </div>
                     </div>
                     <div className="row">
                         <button className="button secondary" type="submit" disabled={isSubmitting}>
-                            Login
+                            Register
                         </button>
                     </div>
                 </form>
