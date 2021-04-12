@@ -105,19 +105,21 @@ class RegisterForm extends Component {
                         </div>
                     </div>
                     <div className="row">
-                        <div>
-                            <div id="checkbox-group">Checked</div>
+                        <div className="flex-wrapper">
+                            <div className="label" id="checkbox-group">Vote</div>
                             <div role="group" aria-labelledby="checkbox-group">
-                                <label><Field type="checkbox" name="checked" value="One" />One</label>
-                                <label><Field type="checkbox" name="checked" value="Two" />Two</label>
-                                <label><Field type="checkbox" name="checked" value="Three" />Three</label>
+                                <label><Field type="checkbox" name="checked" value="one" />One</label>
+                                <label><Field type="checkbox" name="checked" value="two" />Two</label>
+                                <label><Field type="checkbox" name="checked" value="three" />Three</label>
                             </div>
                         </div>
-                        <div>
-                            <div id="my-radio-group">Picked</div>
+                    </div>
+                    <div className="row">
+                        <div className="flex-wrapper">
+                            <div class="label" id="my-radio-group">Gender</div>
                             <div role="group" aria-labelledby="my-radio-group">
-                                <label><Field type="radio" name="picked" value="One" />One</label>
-                                <label><Field type="radio" name="picked" value="Two" />Two</label>
+                                <label><Field type="radio" name="picked" value="M" />Male</label>
+                                <label><Field type="radio" name="picked" value="F" />Female</label>
                             </div>
                         </div>
                     </div>
@@ -135,7 +137,7 @@ class RegisterForm extends Component {
                         </div>
                     </div>
                     <div className="row">
-                        <button className="button secondary" type="submit" disabled={isSubmitting}>
+                        <button className="button" type="submit" disabled={isSubmitting}>
                             Register
                         </button>
                     </div>
@@ -173,8 +175,9 @@ const formikEnhancer = withFormik({
         }
         return errors;
     },
-    handleSubmit: (values, { props, setSubmitting }) => {
+    handleSubmit: (values, { props, setSubmitting, resetForm }) => {
         props.simpleAction(values);
+        resetForm();
         setTimeout(() => setSubmitting(false), 3000);
     }
 })(RegisterForm);

@@ -12,7 +12,7 @@
   height: 39px;
 }
 
-.row > div > label {
+.row > div > label, .label {
   display: inline-block;
   width: 140px;
 }
@@ -30,4 +30,8 @@
   margin-bottom: 16px;
   overflow-wrap: break-word;
   font-size: 14px;
+}
+
+.flex-wrapper {
+  display: flex;
 }

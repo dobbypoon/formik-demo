@@ -1,6 +1,6 @@
 export const simpleAction = (payload) => dispatch => {
     dispatch({
-     type: 'SIMPLE_ACTION',
+     type: 'register/updateResult',
      payload: payload
     })
    }
